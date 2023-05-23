@@ -13,7 +13,7 @@ export default function Login() {
     setError('');
 
     try {
-      const response = await axios.post('/api/login', { email, password });
+      const response = await axios.post('http:localhost:3000/api/login', { email, password });
       const { data } = response;
 
       // Simpan token ke localStorage
@@ -27,6 +27,7 @@ export default function Login() {
   };
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <h1>Login</h1>
 
@@ -44,5 +45,10 @@ export default function Login() {
 
       <button type="submit">Login</button>
     </form>
+    <a1>belum punya akun?</a1>
+    <a href='registersiswa'>
+    <button type="submit">Register</button>
+    </a>
+    </>
   );
 }
